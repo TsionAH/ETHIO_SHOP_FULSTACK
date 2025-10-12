@@ -14,7 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 import os
-import django_heroku
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,7 +44,7 @@ STORAGES = {
     },
 }
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+
 
 REST_FRAMEWORK ={
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -158,5 +158,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+# URL of your frontend React app
+REACT_BASE_URL = "http://localhost:3000"  # use your React dev URL
 
 BASE_URL = os.getenv("REACT_BASE_URL","http://localhost:5174")

@@ -1,1 +1,2 @@
-web: gunicorn ethi_back.wsgi 
+web: gunicorn ethi_back.wsgi:application
+
