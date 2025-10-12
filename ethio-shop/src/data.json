@@ -1,0 +1,20 @@
+[
+  {
+  "id": 1 ,
+  "title": "Traditional Tigray Art",
+  "summary": "Handmade Tigray art that reflects Ethiopian culture and tradition.",
+  "image": "/image/tigray.png",
+  "detail": "Unique traditional art with symbolic patterns.",
+  "ingredients": ["Wood base", "Natural colors", "Cultural patterns"],
+  "instructions": ["Craft base", "Design patterns", "Paint carefully", "Polish and finish"]
+  },
+  {
+  "id": 2 ,
+  "title": "Ethiopian Kemis Dress",
+  "summary": "A handwoven traditional Kemis with colorful embroidery.",
+  "image": "/image/kemis1.png",
+  "detail": "Made with cotton and embroidered borders.",
+  "ingredients": ["Cotton fabric", "Embroidery thread", "Cultural design"],
+  "instructions": ["Weave cotton", "Sew dress", "Add embroidery", "Finalize with cultural patterns"]
+  }
+  ]
