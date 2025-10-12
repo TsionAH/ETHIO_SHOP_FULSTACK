@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ["backend-capstone1-9.onrender.com", "localhost","127.0.0.1"]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5174",
     "http://127.0.0.1:5174",
+    "https://my-shop-k4qd.onrender.com",
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
