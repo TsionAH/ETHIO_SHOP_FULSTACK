@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-(1l=s4o+&t%4-+1jyp(ng8$td+^n)^62wk4-8%y3%pgrs*%3b9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["backend-capstone1-9.onrender.com", "localhost","127.0.0.1"]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5174",
     "http://127.0.0.1:5174",
