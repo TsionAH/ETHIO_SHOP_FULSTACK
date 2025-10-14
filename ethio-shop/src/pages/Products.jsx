@@ -20,10 +20,16 @@ function Products() {
       setLoading(true);
       try {
         const token = localStorage.getItem(ACCESS_TOKEN);
+        console.log("check if the token is working in for the errro")
+        console.log("Endpoint:", endpoint);
+        console.log("Token:", token);
+    
         const res = await productsAPI.get(endpoint, {
           headers: token ? { Authorization: `Bearer ${token}` } : {},
         });
-
+    
+        console.log("Full API response:", res);
+    
         const products = res.data.results || res.data;
         setProductList(products);
         console.log("Products fetched:", products);
@@ -34,6 +40,7 @@ function Products() {
         setLoading(false);
       }
     };
+    
 
     fetchProducts();
   }, [endpoint]);

@@ -37,7 +37,6 @@ cart_add = CartViewSet.as_view({"post": "add"})
 cart_delete = CartViewSet.as_view({"delete": "destroy"})
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     # JWT token endpoints
     path('products/token/', TokenObtainPairView.as_view(), name='get_token'),
     path('products/token/refresh/', TokenRefreshView.as_view(), name='refresh'),
