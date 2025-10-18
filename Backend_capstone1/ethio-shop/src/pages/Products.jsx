@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import productsAPI from "../products"; // your axios instance
-import { ACCESS_TOKEN } from "../constants";
+import productsAPI from "../productsAPI"; // the new file we created
+ // your axios instance
+import { ACCESS_TOKEN,REFRESH_TOKEN } from "../constants";
+// your axios instance
 
 function Products() {
   const [productList, setProductList] = useState([]);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
-import products from "../products"; // your axios instance
+import {jwtDecode} from "jwt-decode";
+import productsAPI from "../productsAPI";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 
 function Protected({ children }) {
@@ -20,29 +20,20 @@ function Protected({ children }) {
         const now = Date.now() / 1000;
 
         if (decoded.exp < now) {
-          await refreshToken();
-        } else {
-          setIsAuthorized(true);
+          // Try to refresh token
+          const refresh = localStorage.getItem(REFRESH_TOKEN);
+          if (!refresh) {
+            setIsAuthorized(false);
+            return;
+          }
+
+          const res = await productsAPI.post("/products/token/refresh/", { refresh });
+          localStorage.setItem(ACCESS_TOKEN, res.data.access);
         }
-      } catch (err) {
-        console.log("JWT decode failed:", err);
-        setIsAuthorized(false);
-      }
-    };
 
-    const refreshToken = async () => {
-      const refresh = localStorage.getItem(REFRESH_TOKEN);
-      if (!refresh) {
-        setIsAuthorized(false);
-        return;
-      }
-
-      try {
-        const res = await products.post("/products/token/refresh/", { refresh });
-        localStorage.setItem(ACCESS_TOKEN, res.data.access);
         setIsAuthorized(true);
       } catch (err) {
-        console.log("Refresh token failed:", err);
+        console.log("JWT decode / refresh failed:", err);
         setIsAuthorized(false);
       }
     };
