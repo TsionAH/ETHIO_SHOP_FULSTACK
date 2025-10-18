@@ -1,0 +1,56 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Products from "./pages/Products";
+import ProductCardDetail from "./components/ProductCardDetail";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import NotFound from "./pages/NotFound";
+import Protected from "./components/Protected";
+import Cart from "./pages/Cart";
+import CartCollection from "./pages/CartCollection";
+function Logout() {
+  localStorage.clear();
+  return <Navigate to="/login" />;
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+
+        {/* Product Details */}
+        <Route
+          path="/product/:id"
+          element={
+            <Protected>
+              <ProductCardDetail />
+            </Protected>
+          }
+        />
+
+        {/* Products list */}
+        <Route
+          path="/products"
+          element={
+            <Protected>
+              <Products />
+            </Protected>
+          }
+        />
+
+        {/* Auth routes */}
+        <Route path="/cart-collection" element={<CartCollection />} />
+        <Route path="/cart" element={<Protected><Cart /></Protected>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/logout" element={<Logout />} />
+
+        {/* 404 */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
