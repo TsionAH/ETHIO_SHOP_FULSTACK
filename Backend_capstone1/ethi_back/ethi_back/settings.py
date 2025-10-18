@@ -31,7 +31,7 @@ print(os.getenv("SECRET_KEY"))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://ethio-shop-fulstack-b1.onrender.com", "localhost","127.0.0.1"]
+ALLOWED_HOSTS = ["ethio-shop-fulstack-b1.onrender.com", "localhost","127.0.0.1"]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
