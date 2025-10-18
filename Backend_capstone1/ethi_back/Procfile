@@ -1,0 +1,1 @@
+web: gunicorn ethi_back.wsgi:application --chdir ethi_back
