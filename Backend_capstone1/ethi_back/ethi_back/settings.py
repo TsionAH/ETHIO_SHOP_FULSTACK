@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(1l=s4o+&t%4-+1jyp(ng8$td+^n)^62wk4-8%y3%pgrs*%3b9'
 print(os.getenv("SECRET_KEY"))
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["https://ethio-shop-fulstack-b1.onrender.com", "localhost","127.0.0.1"]
 CORS_ALLOWED_ORIGINS = [
